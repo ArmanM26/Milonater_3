@@ -1,0 +1,105 @@
+/* Main container aligns its children horizontally */
+.main-container {
+  display: flex;
+  justify-content: center; /* Center the content in the middle */
+  padding: 20px;
+  background-color: #1a1a2e;
+  height: 1000px;
+  color: white;
+  box-sizing: border-box;
+  position: relative;
+  width: 800px;
+}
+
+.home-container {
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  justify-content: flex-start;
+  width: 80%;
+  max-width: 1200px;
+  border-radius: 10px;
+  overflow-y: auto; /* Добавлено для прокрутки, если контент больше */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  height: 580px; /* Фиксированная высота */
+  position: relative;
+  margin-left: 150px;
+}
+
+/* Question container styling */
+.question-container {
+  flex: 2;
+  background-color: #1e1e30;
+  padding: 20px;
+  text-align: center;
+  color: white;
+  overflow: hidden; /* Для скрытия контента, выходящего за пределы */
+}
+
+
+/* Timer styling */
+.timer {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  color: #ffeb3b;
+}
+
+/* Answer button styling */
+.answers {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.answers button {
+  background-color: #2e2e4a;
+  color: white;
+  font-size: 1.2rem;
+  padding: 15px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  width: 220px;
+}
+
+.answers button:hover {
+  background-color: #3d3d5c;
+}
+
+.answers button.correct {
+  background-color: #4caf50;
+}
+
+.answers button.incorrect {
+  background-color: #f44336;
+}
+
+/* Start/Restart button styling */
+button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+  margin-top: 20px;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .home-container {
+    flex-direction: column;
+    width: 90%;
+  }
+
+  .question-container {
+    width: 100%;
+  }
+}
